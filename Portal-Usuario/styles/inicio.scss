@@ -10,12 +10,11 @@ body{
     padding: .875rem 1.25rem;
     width: 10rem;
     img{
-        width: 70%;
+        height: 10vh;
     }
 }
 
 #sidebar-container .menu{
-    background-color: greenyellow;
     width: 10rem;
     text-align: center;
     img{
@@ -32,3 +31,30 @@ body{
     font-size: 30px;
     font-weight: bold;
 }
+
+#nombre_tarjeta{
+    height: 10vh;
+}
+
+#encabezado_info{
+    padding-top: .874rem;
+    padding-bottom: .874rem;
+}
+
+#contenido{
+    overflow-y: auto;
+    height: 100vh;
+    padding-bottom: 5rem;
+}
+
+.stat{
+    border-right: 1px solid #ecedee;
+}
+
+#información{
+    background-color:#ecedee;
+}
+
+.bg-mix{ background: linear-gradient(180deg, white 50%, #ecedee 50% );}
+.bg-gray{    background-color: #ecedee!important;}
+.bg-primary{background-color: #016FD0; color: white;}

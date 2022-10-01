@@ -1,0 +1,6 @@
+USUARIO
+    SELECT * FROM usuario WHERE usuario="" and contraseña="";   
+    INSERT INTO usuario (nombre, usuario,contraseña) VALUES ('', '','');
+    DELETE FROM usuario WHERE nombre='' and contraseña='';
+    UPDATE usuario SET usuario = 'JoaquinMarroquin2' WHERE usuario= 'JoaquinMarroquin';
+

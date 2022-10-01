@@ -1,0 +1,34 @@
+body {
+  overflow: hidden;
+}
+
+#sidebar-container {
+  min-height: 100vh;
+}
+
+#sidebar-container .logo {
+  padding: 0.875rem 1.25rem;
+  width: 10rem;
+}
+#sidebar-container .logo img {
+  width: 70%;
+}
+
+#sidebar-container .menu {
+  background-color: greenyellow;
+  width: 10rem;
+  text-align: center;
+}
+#sidebar-container .menu img {
+  width: 60%;
+  margin: auto;
+}
+
+#datos_tarjeta {
+  width: 80%;
+}
+
+#nombre_cabecera {
+  font-size: 30px;
+  font-weight: bold;
+}/*# sourceMappingURL=inicio.css.map */

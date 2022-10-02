@@ -9,7 +9,9 @@
     $result = pg_query($dbconn,$query);
     $filas = pg_num_rows($result);
     if($filas > 0){
-        $_SESSION["nombre"]= $nombre;
+        $_SESSION["usuario"]= $nombre;
+        $row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
+        $_SESSION["nombre"]= $row['nombre'];
             header("Location: inicio.php");
     }else{
         header("Location: index.php?reg=false");

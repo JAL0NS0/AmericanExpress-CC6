@@ -201,3 +201,32 @@ UPDATE public.abono
 	SET id=?, empleado_id=?, numero_tarjeta=?, fecha=?, monto=?
 	WHERE <condition>;
 
+
+
+-------------OBTENER DATOS DE CONSUMO DE UN USUARIO----------------------------
+SELECT *
+FROM consumo as c, tienda as s, tarjeta as t
+WHERE c.tienda_id=s.id and c.numero_tarjeta = t.numero
+
+SELECT c.fecha, s.nombre, c.monto
+FROM consumo as c, tienda as s, tarjeta as t
+WHERE c.tienda_id=s.id and c.numero_tarjeta = t.numero AND c.numero_tarjeta='2222333344445555' ORDER BY fecha DESC;
+
+----------------OBTENER DATOS DE ABONO DE UN USUARIO----------------------------
+SELECT *
+FROM abono as a, empleado as e, tarjeta as t
+WHERE a.empleado_id=e.id AND a.numero_tarjeta=t.numero AND a.numero_tarjeta='2222333344445555' ORDER BY fecha DESC;
+--------------OPCION PARA ORDENAR HISTORIAL DE MOVIMIENTOS---------------------
+SELECT *
+FROM 
+(
+	SELECT a.fecha,a.id::varchar(20), a.monto
+	FROM abono as a, empleado as e, tarjeta as t
+	WHERE a.empleado_id=e.id AND a.numero_tarjeta=t.numero
+	UNION
+	SELECT c.fecha, s.nombre, c.monto
+	FROM consumo as c, tienda as s, tarjeta as t
+	WHERE c.tienda_id=s.id and c.numero_tarjeta = t.numero
+)result
+order by fecha DESC
+

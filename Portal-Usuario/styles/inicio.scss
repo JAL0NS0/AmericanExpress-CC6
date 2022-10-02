@@ -41,19 +41,17 @@ body{
     padding-bottom: .874rem;
 }
 
-#contenido{
-    overflow-y: auto;
+#Informacion{
+    overflow-y: auto !important;
     height: 100vh;
     padding-bottom: 5rem;
+    background-color:#ecedee;
 }
 
 .stat{
     border-right: 1px solid #ecedee;
 }
 
-#información{
-    background-color:#ecedee;
-}
 
 .bg-mix{ background: linear-gradient(180deg, white 50%, #ecedee 50% );}
 .bg-gray{    background-color: #ecedee!important;}

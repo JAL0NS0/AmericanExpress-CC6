@@ -41,6 +41,16 @@
         $nombre = $_SESSION['nombre'];
         $id = $_SESSION['id'];
         
+        $query= "SELECT * FROM empleado;";
+        $result = pg_query($dbconn,$query);        
+        $filas = pg_num_rows($result);
+        $id=1;
+        if($filas > 0){
+            $query= "SELECT MAX(id) FROM empleado";
+            $result = pg_query($dbconn,$query);
+            $row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
+            $id= intval($row['max'])+1;
+        }
     ?>
     
     <div class="d-flex">
@@ -58,7 +68,7 @@
                     </div>
                     <div class="container text-center" id="cerrar_sesion">
                         <div class="container mx-3">
-                                <a class="btn btn-danger" href="./logout.php">Cerrar sesion</a>
+                                <a class="btn btn-danger" href="../logout.php">Cerrar sesion</a>
                         </div>
                     </div>
                 </div>
@@ -77,9 +87,34 @@
                                     <div class="card-body">
                                        <div class="container" >
                                         <div class="row">
-                                            <div class="col-12 text-center my-2">
-                                                <a href="../inicio.php" class="btn btn-light">CANCELAR</a>
-                                            </div>
+                                            <form action="./guardar_empleado.php" method="post">
+                                                <?php
+                                                    if(isset($_GET["res"])){
+                                                        if($_GET["reg"]=="false"){
+                                                            ?><div class="alert alert-danger" role="alert">Datos incorrectos!
+                                                            </div>
+                                                            <?php 
+                                                        }
+                                                    }
+                                                ?>
+                                                <legend>NUEVO EMPLEADO</legend>
+                                                <div class="mb-1">
+                                                    <label for="id" class="form-label">ID</label>
+                                                    <input type="number" class="form-control" id="id" name="id" value= "<?php echo $id ?>">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="nombre" class="form-label">Nombre</label>
+                                                    <input class="form-control" id= "nombre" name="nombre" type="text">
+                                                </div>  
+                                                <div class="mb-3">
+                                                    <label for="contraseña" class="form-label">Contraseña</label>
+                                                    <input class="form-control" id= "contraseña" name="contraseña" type="password">
+                                                </div>        
+                                                <button type="submit" class="btn btn-primary">INGRESAR</button>   
+                                                <div class="col-12 text-center my-2">
+                                                    <a href="../inicio.php" class="btn btn-light">CANCELAR</a>
+                                                </div>       
+                                            </form> 
                                         </div>
                                        </div>
                                     </div>

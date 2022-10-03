@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/carga.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <title>Home-AMERICAN EXPRESS</title>
+    <title>Empleados-AMERICAN EXPRESS</title>
     <!-- CSS bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- Mis estilos -->
-    <link rel="stylesheet" href="./styles/inicio.css">
-    <link href="styles/carga.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../styles/inicio.css">
+    <link href="../styles/carga.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="loader"></div>
@@ -37,10 +37,9 @@
             die();
         }  
 
-        include('./DB/db.php');
+        include('../DB/db.php');
         $nombre = $_SESSION['nombre'];
         $id = $_SESSION['id'];
-
     ?>
     
     <div class="d-flex">
@@ -58,7 +57,7 @@
                     </div>
                     <div class="container text-center" id="cerrar_sesion">
                         <div class="container mx-3">
-                                <a class="btn btn-danger" href="./logout.php">Cerrar sesion</a>
+                                <a class="btn btn-danger" href="../logout.php">Cerrar sesion</a>
                         </div>
                     </div>
                 </div>
@@ -72,37 +71,42 @@
                             <div class="col-lg-12 mb-3 mt-2">
                                 <div class="card rounded-1">
                                     <div class="card-header bg-light">
-                                        <h6 class="font-weight-bold mb-0">Acciones</h6>
+                                        <h6 class="font-weight-bold mb-0">EMPLEADOS</h6>
                                     </div>
                                     <div class="card-body">
                                        <div class="container" >
-                                            <div class="row">
-                                                <div class="col-12 text-center my-2">
-                                                    <a href="./nueva_tarjeta.php" class="btn btn-primary">NUEVA TARJETA</a>
-                                                </div>
+                                        <div class="row">
+                                            <div class="col-4 mx-auto my-2">
+                                                <a href="../inicio.php" class="btn btn-primary">Volver</a>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-12 text-center my-2">
-                                                    <a href="./realizar_abono.php" class="btn btn-primary">REALIZAR PAGO</a>
-                                                </div>
+                                            <div class="col-4 mx-auto my-2">
+                                                <a href="./nuevo_empleado.php" class="btn btn-primary">NUEVO EMPLEADO</a>
                                             </div>
-
-                                            <?php 
-                                                if(!strncasecmp($nombre, 'Admin', 5)){
-                                                    echo "
-                                                        <div class='row'>
-                                                            <div class='col-12 text-center my-2'>
-                                                                <a href='./Admin/empleados.php' class='btn btn-info'>Empleados</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class='row'>
-                                                            <div class='col-12 text-center my-2'>
-                                                                <a href='./Admin/tiendas.php' class='btn btn-info'>Tiendas</a>
-                                                            </div>
-                                                        </div>
-                                                    ";
-                                                }
-                                            ?>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 mx-auto">
+                                                <table class="table table-striped">
+                                                    <thead>
+                                                        <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">Nombre</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php
+                                                            $query="SELECT * FROM empleado ORDER BY id";
+                                                            $result = pg_query($dbconn,$query);        
+                                                            while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
+                                                                echo "<tr>
+                                                                        <th scope='row'>".$row['id']." </th>
+                                                                        <td>". $row['nombre'] ."</td>
+                                                                    </tr>";
+                                                            }
+                                                        ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
                                        </div>
                                     </div>
                                 </div>

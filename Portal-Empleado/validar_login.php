@@ -12,15 +12,10 @@
         $_SESSION["id"]= $id;
         $row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
         $_SESSION["nombre"]= $row['nombre'];
-        if($row['nombre']='Admin'){
-            header("Location: admin.php");
-        }
-            header("Location: inicio.php");
+        header("Location: inicio.php");
     }else{
         header("Location: index.php?reg=false");
     }
     // Cerramos la conexion
     pg_close($dbconn);
 ?>
-
-

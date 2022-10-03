@@ -30,8 +30,8 @@
 
     <div class="container my-4">
 
-                <center>
-                <div class=" col-4 py-3">
+            <center>
+            <div class=" col-4 py-3">
                 <legend>REALIZAR PAGO</legend>
                     <div class="mb-3">
                         <label for="tarjeta" class="form-label">Numero de Tarjeta</label>
@@ -52,7 +52,6 @@
                     </div>
                 </center>
             </div>
-        </div>
     </div>
     
     

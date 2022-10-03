@@ -286,7 +286,7 @@
                                             <tfoot class="table-dark">
                                                 <tr>
                                                 <th scope="row"></th>
-                                                <td><?php echo date('Y-m-d', time()) ?></td>
+                                                <td><?php echo date('Y-m-d h:i:s', time()) ?></td>
                                                 <td colspan="1" class="">TOTAL</td>
                                                 <td><?php echo number_format($total_consumo, 2) ?></td>
                                                 <td><?php echo number_format($total_abono, 2)?></td>

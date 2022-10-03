@@ -1,5 +1,6 @@
 <?php
     // detalles de la conexion
+    date_default_timezone_set('America/Guatemala');
     $host= "localhost";
     $puerto= "5432";
     $dbnombre= "AMERICAN_EXP";

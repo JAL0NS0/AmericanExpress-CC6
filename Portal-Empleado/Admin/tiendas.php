@@ -89,7 +89,8 @@
                                                     <thead>
                                                         <tr>
                                                         <th scope="col">ID</th>
-                                                        <th scope="col">Nombre</th>
+                                                        <th >Nombre</th>
+                                                        <th >Borrar</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -100,6 +101,7 @@
                                                                 echo "<tr>
                                                                         <th scope='row'>".$row['id']." </th>
                                                                         <td>". $row['nombre'] ."</td>
+                                                                        <td> <a href='eliminar_tienda.php?id=".$row['id']."'>Borrar</a> </td>
                                                                     </tr>";
                                                             }
                                                         ?>

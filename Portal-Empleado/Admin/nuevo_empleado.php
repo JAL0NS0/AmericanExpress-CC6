@@ -90,7 +90,7 @@
                                             <form action="./guardar_empleado.php" method="post">
                                                 <?php
                                                     if(isset($_GET["res"])){
-                                                        if($_GET["reg"]=="false"){
+                                                        if($_GET["res"]=="false"){
                                                             ?><div class="alert alert-danger" role="alert">Datos incorrectos!
                                                             </div>
                                                             <?php 

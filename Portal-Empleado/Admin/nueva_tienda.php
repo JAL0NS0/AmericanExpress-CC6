@@ -92,7 +92,7 @@
                                             <form action="guardar_tienda.php" method="post">
                                                 <?php
                                                     if(isset($_GET["res"])){
-                                                        if($_GET["reg"]=="false"){
+                                                        if($_GET["res"]=="false"){
                                                             ?><div class="alert alert-danger" role="alert">Datos incorrectos!
                                                             </div>
                                                             <?php 
@@ -110,7 +110,7 @@
                                                 </div>        
                                                 <button type="submit" class="btn btn-primary">INGRESAR</button>   
                                                 <div class="col-12 text-center my-2">
-                                                    <a href="../inicio.php" class="btn btn-light">CANCELAR</a>
+                                                    <a href="tiendas.php" class="btn btn-light">CANCELAR</a>
                                                 </div>       
                                             </form> 
                                         </div>

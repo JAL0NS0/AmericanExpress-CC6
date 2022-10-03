@@ -29,11 +29,10 @@
     </nav>
 
     <div class="container my-4">
-        <div class="row">
-            
-            <div class=" col-4 py-3">
-                
-            <legend>REALIZAR PAGO</legend>
+
+                <center>
+                <div class=" col-4 py-3">
+                <legend>REALIZAR PAGO</legend>
                     <div class="mb-3">
                         <label for="tarjeta" class="form-label">Numero de Tarjeta</label>
                         <input type="number" class="form-control" id="numero" name="numero">
@@ -48,6 +47,11 @@
                         <label for="tarjeta" class="form-label">Monto</label>
                         <input type="number" class="form-control" id="m_autorizado" name="m_autorizado">
                     </div>
+                    <div>
+                        <button>
+                    </div>
+                </center>
+            </div>
         </div>
     </div>
     

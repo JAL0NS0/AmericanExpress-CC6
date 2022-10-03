@@ -29,26 +29,26 @@
     </nav>
 
     <div class="container my-4">
-        <div class="row">
-            
-            <div class=" col-4 py-3">
-                
-            <legend>REALIZAR PAGO</legend>
-                    <div class="mb-3">
-                        <label for="tarjeta" class="form-label">Numero de Tarjeta</label>
-                        <input type="number" class="form-control" id="numero" name="numero">
+        <center>
+        <div class="col-4 py-4">
+            <legend>CREAR NUEVA TARJETA</legend>
+                    <div class="mb-3" >
+                        <label for="usuario" class="form-label">Usuario</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario">
                     </div>
 
                     <div class="mb-3">
-                        <label for="tarjeta" class="form-label">Numero de Seguridad</label>
-                        <input type="number" class="form-control" id="num_seg" name="num_seg">
+                        <label for="tarjeta" class="form-label">Fecha de Vencimiento</label>
+                        <input type="number" class="form-control" id="vencimiento" name="vencimiento">
                     </div>
 
-                    <div class="mb-2">
+                    <div class="mb-3">
                         <label for="tarjeta" class="form-label">Monto</label>
                         <input type="number" class="form-control" id="m_autorizado" name="m_autorizado">
                     </div>
         </div>
+        </center>
+     
     </div>
     
     

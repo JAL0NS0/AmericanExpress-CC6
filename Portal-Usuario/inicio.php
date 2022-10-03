@@ -97,7 +97,7 @@
                                     Dropdown
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="./datos_usuario.php">Perfil</a></li>
                                     <li><a class="dropdown-item" href="#">Another action</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li style="background-color: red;"><a class="dropdown-item" href="./logout.php">Cerrar sesion</a></li>

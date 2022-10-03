@@ -2,43 +2,18 @@ body {
   overflow: hidden;
 }
 
-#sidebar-container {
-  min-height: 100vh;
-}
-
-#sidebar-container .logo {
-  padding: 0.875rem 1.25rem;
-  width: 10rem;
-}
-#sidebar-container .logo img {
-  height: 10vh;
-}
-
-#sidebar-container .menu {
-  width: 10rem;
-  text-align: center;
-}
-#sidebar-container .menu img {
-  width: 60%;
-  margin: auto;
-}
-
-#datos_tarjeta {
-  width: 80%;
-}
-
-#nombre_cabecera {
-  font-size: 30px;
-  font-weight: bold;
-}
-
-#nombre_tarjeta {
-  height: 10vh;
+#cerrar_sesion {
+  width: 20%;
 }
 
 #encabezado_info {
   padding-top: 0.874rem;
   padding-bottom: 0.874rem;
+}
+
+#nombre_cabecera {
+  font-size: 30px;
+  font-weight: bold;
 }
 
 #Informacion {

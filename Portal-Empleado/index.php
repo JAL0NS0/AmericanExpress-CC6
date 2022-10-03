@@ -52,14 +52,12 @@
                     <div class="mb-3">
                         <label for="contraseña" class="form-label">Contraseña</label>
                         <input class="form-control" id= "contraseña" name="contraseña" type="password">
-                    </div>
-                    
-                    
+                    </div>       
+                    <button type="submit" class="btn btn-primary">INGRESAR</button>          
                 </form>           
             </div>
         </div>
     </div>
-    
     
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>

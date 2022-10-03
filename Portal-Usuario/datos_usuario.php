@@ -51,7 +51,6 @@
             $row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
             $contraseña = $row['contraseña'];
         }
-        echo $contraseña;
     ?>
     
     <div class="d-flex">
@@ -90,7 +89,6 @@
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="./datos_usuario.php">Perfil</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li style="background-color: red;" class="active"><a class="dropdown-item" href="./logout.php">Cerrar sesion</a></li>
                                 </ul>
@@ -115,18 +113,18 @@
                                     <div class="card-body">
                                         <div class="container">
                                             <div class="row my-3">
-                                                <div class="col-4" style="background-color:red">
+                                                <div class="col-4" >
                                                     Nombre:
                                                 </div>
-                                                <div class="col-8" style="background-color:green">
+                                                <div class="col-8" >
                                                     <?php echo $nombre ?>
                                                 </div>
                                             </div>
                                             <div class="row my-3">
-                                                <div class="col-4" style="background-color:red">
+                                                <div class="col-4" >
                                                     Usuario:
                                                 </div>
-                                                <div class="col-8" style="background-color:green">
+                                                <div class="col-8" >
                                                     <?php echo $usuario ?>
                                                 </div>
                                             </div>

@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles/carga.css" rel="stylesheet" type="text/css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <title>Home-AMERICAN EXPRESS</title>
+    <title>Nueva Tarjeta-AMERICAN EXPRESS</title>
     <!-- CSS bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <!-- Mis estilos -->
-    <link rel="stylesheet" href="./styles/inicio.css">
-    <link href="styles/carga.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../styles/inicio.css">
+    <link href="../styles/carga.css" rel="stylesheet" type="text/css">
 </head>
 <body>
     <div class="loader"></div>
@@ -37,10 +37,10 @@
             die();
         }  
 
-        include('./DB/db.php');
+        include('../DB/db.php');
         $nombre = $_SESSION['nombre'];
         $id = $_SESSION['id'];
-
+        
     ?>
     
     <div class="d-flex">
@@ -72,37 +72,15 @@
                             <div class="col-lg-12 mb-3 mt-2">
                                 <div class="card rounded-1">
                                     <div class="card-header bg-light">
-                                        <h6 class="font-weight-bold mb-0">Acciones</h6>
+                                        <h6 class="font-weight-bold mb-0">NUEVA TIENDA</h6>
                                     </div>
                                     <div class="card-body">
                                        <div class="container" >
-                                            <div class="row">
-                                                <div class="col-12 text-center my-2">
-                                                    <a href="./nueva_tarjeta.php" class="btn btn-primary">NUEVA TARJETA</a>
-                                                </div>
+                                        <div class="row">
+                                            <div class="col-12 text-center my-2">
+                                                <a href="../inicio.php" class="btn btn-light">CANCELAR</a>
                                             </div>
-                                            <div class="row">
-                                                <div class="col-12 text-center my-2">
-                                                    <a href="./realizar_abono.php" class="btn btn-primary">REALIZAR PAGO</a>
-                                                </div>
-                                            </div>
-
-                                            <?php 
-                                                if($nombre = 'Admin'){
-                                                    ?>
-                                                        <div class="row">
-                                                            <div class="col-12 text-center my-2">
-                                                                <a href="./Admin/nuevo_empleado.php" class="btn btn-primary">AGREGAR EMPLEADO</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-12 text-center my-2">
-                                                                <a href="./Admin/nueva_tienda.php" class="btn btn-primary">AGREGAR TIENDA</a>
-                                                            </div>
-                                                        </div>
-                                                    <?php
-                                                }
-                                            ?>
+                                        </div>
                                        </div>
                                     </div>
                                 </div>

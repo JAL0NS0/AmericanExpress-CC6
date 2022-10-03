@@ -1,0 +1,13 @@
+.encabezado {
+  background-color: green;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.centrar {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}/*# sourceMappingURL=index.css.map */

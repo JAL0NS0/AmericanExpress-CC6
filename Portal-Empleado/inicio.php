@@ -92,12 +92,12 @@
                                                     ?>
                                                         <div class="row">
                                                             <div class="col-12 text-center my-2">
-                                                                <a href="./Admin/nuevo_empleado.php" class="btn btn-primary">AGREGAR EMPLEADO</a>
+                                                                <a href="./Admin/nuevo_empleado.php" class="btn btn-info">AGREGAR EMPLEADO</a>
                                                             </div>
                                                         </div>
                                                         <div class="row">
                                                             <div class="col-12 text-center my-2">
-                                                                <a href="./Admin/nueva_tienda.php" class="btn btn-primary">AGREGAR TIENDA</a>
+                                                                <a href="./Admin/nueva_tienda.php" class="btn btn-info">AGREGAR TIENDA</a>
                                                             </div>
                                                         </div>
                                                     <?php

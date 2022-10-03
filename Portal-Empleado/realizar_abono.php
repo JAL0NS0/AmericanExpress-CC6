@@ -71,14 +71,38 @@
                         <div class="row">
                             <div class="col-lg-12 mb-3 mt-2">
                                 <div class="card rounded-1">
-                                    <div class="card-header bg-light">
-                                        <h6 class="font-weight-bold mb-0">REALIZAR PAGO</h6>
-                                    </div>
                                     <div class="card-body">
                                        <div class="container">
                                             <div class="row">
-                                                <div class="col-12 text-center my-2">
-                                                    <a href="./inicio.php" class="btn btn-light">CANCELAR</a>
+                                                <div class="col-12 my-2">
+                                                    <form action="validar_login.php" method="post">
+                                                        <?php
+                                                            if(isset($_GET["reg"])){
+                                                                if($_GET["reg"]=="false"){
+                                                                    ?><div class="alert alert-danger" role="alert">Usuario o contraseña incorrectos!
+                                                                    </div>
+                                                                    <?php 
+                                                                }
+                                                            }
+                                                        ?>
+                                                        <legend>REALIZAR ABONO</legend>
+                                                        <div class="mb-1">
+                                                            <label for="numero" class="form-label">Numero de tarjeta</label>
+                                                            <input type="number" class="form-control" id="numero" name="numero">
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="nombre" class="form-label">Nombre</label>
+                                                            <input class="form-control" id= "nombre" name="nombre" type="text">
+                                                        </div> 
+                                                        <div class="mb-3">
+                                                            <label for="monto-autorizado" class="form-label">Abono (Q.)</label>
+                                                            <input class="form-control" id= "monto-autorizado" name="monto-autorizado" type="number">
+                                                        </div>       
+                                                        <button type="submit" class="btn btn-primary">INGRESAR</button>   
+                                                        <div class="col-12 text-center my-2">
+                                                            <a href="./inicio.php" class="btn btn-light">CANCELAR</a>
+                                                        </div>       
+                                                    </form> 
                                                 </div>
                                             </div>
                                        </div>

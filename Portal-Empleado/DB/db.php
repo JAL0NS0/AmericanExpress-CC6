@@ -5,6 +5,7 @@
     $dbnombre= "AMERICAN_EXP";
     $usuario= "postgres";
     $contraseña = "1928";
+    $contraseña = "1234";
 
 
     //Crear conexión

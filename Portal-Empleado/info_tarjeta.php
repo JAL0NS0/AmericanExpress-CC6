@@ -77,32 +77,21 @@
                                     <div class="card-body">
                                        <div class="container" >
                                             <div class="row">
-                                                <div class="col-12 text-center my-2">
+                                                <div class="col-4 text-center my-2">
+                                                    <a href="./nueva_tarjeta.php" class="btn btn-primary">NUEVA TARJETA</a>
+                                                </div>
+                                                <div class="col-8 text-center my-2">
                                                     <a href="./nueva_tarjeta.php" class="btn btn-primary">NUEVA TARJETA</a>
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <div class="col-12 text-center my-2">
+                                                <div class="col-4 text-center my-2">
                                                     <a href="./realizar_abono.php" class="btn btn-primary">REALIZAR PAGO</a>
                                                 </div>
+                                                <div class="col-8 text-center my-2">
+                                                    <a href="./nueva_tarjeta.php" class="btn btn-primary">NUEVA TARJETA</a>
+                                                </div>
                                             </div>
-
-                                            <?php 
-                                                if($nombre = 'Admin'){
-                                                    ?>
-                                                        <div class="row">
-                                                            <div class="col-12 text-center my-2">
-                                                                <a href="./Admin/nuevo_empleado.php" class="btn btn-info">AGREGAR EMPLEADO</a>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-12 text-center my-2">
-                                                                <a href="./Admin/nueva_tienda.php" class="btn btn-info">AGREGAR TIENDA</a>
-                                                            </div>
-                                                        </div>
-                                                    <?php
-                                                }
-                                            ?>
                                        </div>
                                     </div>
                                 </div>
@@ -111,8 +100,6 @@
                     </div>
                 </section>
             </div>
-
-
         </div>
     </div>
     

@@ -9,6 +9,7 @@
     <title>Home-AMERICAN EXPRESS</title>
     <!-- CSS bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <!-- Mis estilos -->
     <link rel="stylesheet" href="./styles/inicio.css">
     <link href="styles/carga.css" rel="stylesheet" type="text/css">
@@ -93,12 +94,11 @@
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li class="nav-item dropdown">
                             <div class="container mx-3">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown
+                                <a class="nav-link dropdown-toggle" id="desplegable" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="bi bi-gear-fill" id="engranaje"></i> 
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="./datos_usuario.php">Perfil</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li style="background-color: red;"><a class="dropdown-item" href="./logout.php">Cerrar sesion</a></li>
                                 </ul>
@@ -286,7 +286,7 @@
                                             <tfoot class="table-dark">
                                                 <tr>
                                                 <th scope="row"></th>
-                                                <td><?php echo date('Y-m-d', time()) ?></td>
+                                                <td><?php echo date('Y-m-d h:i:s', time()) ?></td>
                                                 <td colspan="1" class="">TOTAL</td>
                                                 <td><?php echo number_format($total_consumo, 2) ?></td>
                                                 <td><?php echo number_format($total_abono, 2)?></td>

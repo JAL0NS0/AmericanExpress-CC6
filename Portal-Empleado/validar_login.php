@@ -12,7 +12,7 @@
         $_SESSION["id"]= $id;
         $row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
         $_SESSION["nombre"]= $row['nombre'];
-        if($row['nombre']='admin'){
+        if($row['nombre']='Admin'){
             header("Location: admin.php");
         }
             header("Location: inicio.php");

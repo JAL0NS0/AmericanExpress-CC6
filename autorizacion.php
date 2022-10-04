@@ -25,6 +25,8 @@
     $nombre=$_GET["nombre"];
     $nombre = str_replace("_", " ", $nombre, $count);
     $vencimiento = $_GET["fecha_venc"];
+    $año_vencimiento = substr($vencimiento, 0,4);
+    $mes_vencimiento = substr($vencimiento, 4,2);
     $num_seg= $_GET["num_seguridad"];
     $monto= floatval($_GET["monto"]);
     $tienda = $_GET["tienda"];
@@ -37,7 +39,7 @@
             WHERE u.nombre='$nombre' 
                 AND t.numero='$tarjeta'
                 AND t.num_seg='$num_seg'
-                AND t.vencimiento='$vencimiento';";
+                AND t.vencimiento='$año_vencimiento-$mes_vencimiento-30';";
     $result = pg_query($dbconn,$query);
     $filas = pg_num_rows($result);
     

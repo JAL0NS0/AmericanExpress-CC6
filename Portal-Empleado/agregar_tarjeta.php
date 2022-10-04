@@ -141,7 +141,7 @@
                                                                              <div> TARJETA INGRESADA CORRECTAMENTE</div>
                                                                          </div>
                                                                          <div class='row'>
-                                                                             <div><a class='btn btn-primary' href='./tarjeta.php'>REGRESAR</a></div>
+                                                                             <div><a class='btn btn-primary' href='./tarjetas.php'>REGRESAR</a></div>
                                                                          </div>";
                                                              }else{
                                                                  echo "<div class='row'>

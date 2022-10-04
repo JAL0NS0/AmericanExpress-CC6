@@ -137,7 +137,6 @@
                                                         echo  "<input type='password' value= '$contraseña' name='password' id='password' disabled>";
                                                     ?>
                                                     <button class="btn btn-primary" type="button" onclick="mostrarContrasena()">Mostrar Contraseña</button>
-                                                    
                                                 </div>
                                             </div>
                                         </div>

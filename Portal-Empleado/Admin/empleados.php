@@ -101,7 +101,7 @@
                                                                 echo "<tr>
                                                                         <th scope='row'>".$row['id']." </th>
                                                                         <td>". $row['nombre'] ."</td>";
-                                                                if($nombre!='Amin' and $id!='0') {
+                                                                if(!strncasecmp($nombre, 'Admin', 5)) {
                                                                     echo "<td> <a href='eliminar_empleado.php?id=".$row['id']."'>Borrar</a> </td>";
                                                                 }else{
                                                                     echo "<td></td>";

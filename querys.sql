@@ -141,3 +141,9 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.consumo
     OWNER to postgres;
+
+
+
+INSERT INTO public.empleado(
+	nombre, "contraseña", id)
+	VALUES ('Admin', 'Admin', 0);

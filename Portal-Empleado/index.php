@@ -46,7 +46,7 @@
                     ?>
                     <legend>INGRESAR</legend>
                     <div class="mb-3">
-                        <label for="usuario" class="form-label">Identificacion</label>
+                        <label for="usuario" class="form-label">Número de Identificacion</label>
                         <input type="text" class="form-control" id="id" name="id">
                     </div>
                     <div class="mb-3">

@@ -73,6 +73,11 @@
                                 <div class="card rounded-1">
                                     <div class="card-body">
                                        <div class="container" >
+                                        <div class="row my-2 text-center">
+                                            <div class="col-4 my-auto">
+                                                <a href="./inicio.php" class="btn btn-primary">VOLVER</a>
+                                            </div>
+                                        </div>
                                         <div class="row">
                                             <div class="col-5"><label for="num_tarjeta">Número:</label><input type="number" class="mx-2" name="num_tarjeta" id="num_tarjeta"></div>
                                             <div class="col-5"><label for="nombre">Nombre:</label><input type="text" class="mx-2" name="nombre" id="nombre"></div>

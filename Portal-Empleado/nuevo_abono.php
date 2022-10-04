@@ -78,7 +78,7 @@
                                        <div class="container">
                                             <div class="row">
                                                 <div class="col-12 my-2">
-                                                    <form action="agregar_abono.php" method="post" onsubmit="return abono();">
+                                                    <form action="agregar_abono.php" method="POST" onsubmit="return verificarAbono();">
                                                         <?php
                                                             if(isset($_GET["reg"])){
                                                                 if($_GET["reg"]=="false"){
@@ -92,6 +92,8 @@
                                                         <div class="container">
                                                             <div class="row">
                                                                 <div class="col-8 mx-auto">
+                                                                    <?php echo "<input type='hidden' name='saldo' id='saldo' value='$saldo'>";
+                                                                    ?>
                                                                     <div class="mb-1">
                                                                         <?php echo "<h3>$numero_tarjeta</h3>"
                                                                         ?>
@@ -106,7 +108,7 @@
                                                                     </div>  
                                                                     <div class="mb-3">
                                                                         <label for="abono" class="form-label">Abono (Q.)</label>
-                                                                        <input class="form-control" id= "abono" name="abono" type="number" step="0.01" required>
+                                                                        <input class="form-control" id="abono" name="abono" type="number" step="0.01" required>
                                                                     </div>       
                                                                     <button type="submit" class="btn btn-primary">INGRESAR</button>   
                                                                     <div class="col-12 text-center my-2">
@@ -134,6 +136,6 @@
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <!-- Mis scripts -->
-    <script src="./js/abono.js"></script>
+    <script src="./js/nuevo_abono.js"></script>
 </body>
 </html>

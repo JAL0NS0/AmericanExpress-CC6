@@ -100,9 +100,13 @@
                                                             while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
                                                                 echo "<tr>
                                                                         <th scope='row'>".$row['id']." </th>
-                                                                        <td>". $row['nombre'] ."</td>
-                                                                        <td> <a href='eliminar_empleado.php?id=".$row['id']."'>Borrar</a> </td>
-                                                                    </tr>";
+                                                                        <td>". $row['nombre'] ."</td>";
+                                                                if($nombre!='Amin' and $id!='0') {
+                                                                    echo "<td> <a href='eliminar_empleado.php?id=".$row['id']."'>Borrar</a> </td>";
+                                                                }else{
+                                                                    echo "<td></td>";
+                                                                }   
+                                                                echo  "</tr>";
                                                             }
                                                         ?>
                                                     </tbody>

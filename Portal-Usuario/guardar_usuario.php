@@ -69,24 +69,24 @@
                                                         echo "<div class='row mx-auto'>
                                                                 <div class='text-center'>USUARIO YA EXISTE</div>
                                                             </div>
-                                                            <div class='row'>
+                                                            <div class='row text-center mx-auto'>
                                                                 <div class='text-center'><a class='btn btn-primary' href='./nuevo_usuario.php?res=false'>REGRESAR</a></div>
                                                             </div>";
                                                     }else{
                                                         $query =     "INSERT INTO usuario (nombre, usuario,contraseña) VALUES ('$nombre', '$usuario','$contraseña');";
                                                         $result = pg_query($dbconn,$query);
                                                         if($result){
-                                                            echo "<div class='row'>
+                                                            echo "<div class='row text-center mx-auto'>
                                                                         <div>USUARIO INGRESADO CORRECTAMENTE</div>
                                                                     </div>
-                                                                    <div class='row'>
-                                                                        <div><a class='btn btn-primary' href='./index.php'>REGRESAR</a></div>
+                                                                    <div class='row text-center mx-auto'>
+                                                                        <div><a class='btn btn-primary' href='./index.php'>INGRESAR</a></div>
                                                                     </div>";
                                                         }else{
-                                                            echo "<div class='row'>
+                                                            echo "<div class='row text-center mx-auto'>
                                                                     <div> OCURRIO UN ERROR USUARIO NO HA SIDO CREADO</div>
                                                                 </div>
-                                                                <div class='row'>
+                                                                <div class='row text-center mx-auto'>
                                                                     <div><a class='btn btn-primary' href='./nuevo_usuario.php?res=false'>REGRESAR</a></div>
                                                                 </div>";
                                                         }

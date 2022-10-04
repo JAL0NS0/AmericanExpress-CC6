@@ -89,6 +89,12 @@
                                                     <input class="form-control" id= "num_seguridad" name="num_seguridad" type="number" required minlength="3">
                                                 </div> 
                                                 <div class="mb-3">
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox" role="switch" id="generar" name="generar">
+                                                        <label class="form-check-label" for="generar">GENERAR NUMERO DE TARJETA Y SEGURIDDAD AUTOMATICAMENTE</label>
+                                                    </div>
+                                                </div>
+                                                <div class="mb-3">
                                                     <label for="fecha_vencimiento" class="form-label">Fecha vencimiento</label>
                                                     <input class="form-control" id="fecha_vencimiento" name="fecha_vencimiento" type="month" required>
                                                 </div>

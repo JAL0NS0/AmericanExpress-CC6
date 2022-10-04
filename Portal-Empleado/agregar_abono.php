@@ -23,6 +23,7 @@
 
     <?php
         session_start();
+        date_default_timezone_set('America/Guatemala');
 
         if(isset($_SESSION['nombre'])){ 
             $nombre = $_SESSION['nombre'];
@@ -42,7 +43,8 @@
         $id = $_SESSION['id'];
         $numero_tarjeta =$_SESSION['numero_tarjeta'];
         $nombre_tarjeta = $_SESSION['nombre_tarjeta'];
-        $saldo=floatval($_SESSION['saldo']);
+        $m_disponible=floatval($_SESSION['m_disponible']);
+        $abono=floatval($_POST["abono"]);
         
     ?>
     
@@ -82,26 +84,41 @@
                                         <div class="row">
                                             <div class="col-4">
                                                 <?php 
-                                                    $abono = $_POST["abono"];
-
-                                                    $query= "INSERT INTO public.tarjeta(
-                                                            usuario, numero, num_seg, vencimiento, m_autorizado, m_disponible)
-                                                            VALUES ('$usuario', '$num_tarjeta', '$num_seguridad', '$fecha_vencimiento', $monto_autorizado, $monto_autorizado);";
-                                                    $result = pg_query($dbconn,$query); 
+                                                    /**RESTAMOS AL SALDO DISPONIBLE */
+                                                    $suma = $m_disponible + $abono;
+                                                    $query= "UPDATE public.tarjeta
+                                                            SET  m_disponible= $suma
+                                                            WHERE numero='$numero_tarjeta';";
+                                                    $result = pg_query($dbconn,$query);
                                                     if($result){
+                                                        /** REGISTRAMOS EL CONSUMO */
+                                                        /** verificamos numeor de autorización siguiente */
+                                                        $query="SELECT MAX(id)
+                                                                FROM public.abono;";
+                                                        $consulta = pg_query($dbconn,$query);
+                                                        $lista_MAX= pg_fetch_array($consulta, NULL, PGSQL_ASSOC);
+                                                        $autorizacion = 1000;
+                                                        if($lista_MAX){
+                                                            $autorizacion = intval($lista_MAX['max'])+1;
+                                                        }
+                                                        
+                                                        $query="INSERT INTO public.abono(
+                                                                id, empleado_id, numero_tarjeta, fecha, monto)
+                                                                VALUES ($autorizacion, $id, $numero_tarjeta,  '".date('Y-m-d h:i:s a', time())."', $abono);";
+                                                        $result = pg_query($dbconn,$query);
                                                         echo "<div class='row'>
-                                                                    <div> TIENDA INGRESADA CORRECTAMENTE</div>
+                                                                    <div> ABONO REGISTRADO CORRECTAMENTE</div>
                                                                 </div>
                                                                 <div class='row'>
-                                                                    <div><a class='btn btn-primary' href='./tarjeta.php'>REGRESAR</a></div>
-                                                                </div>";
+                                                                    <div><a class='btn btn-primary' href='./tarjetas.php'>REGRESAR</a></div>
+                                                                </div>";                            
                                                     }else{
                                                         echo "<div class='row'>
-                                                                <div> OCURRIO UN ERROR TIENDA NO HA SIDO INGRESADA</div>
-                                                            </div>
-                                                            <div class='row'>
-                                                                <div><a class='btn btn-primary' href='./nueva_tienda.php?res=false'>REGRESAR</a></div>
-                                                            </div>";
+                                                                    <div> ERROR AL REGISTAR EL ABONO</div>
+                                                                </div>
+                                                                <div class='row'>
+                                                                    <div><a class='btn btn-primary' href='./tarjetas.php'>REGRESAR</a></div>
+                                                                </div>";
                                                     }
                                                 ?>
                                             </div>

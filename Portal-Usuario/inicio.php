@@ -41,15 +41,17 @@
         include('./DB/db.php');
         $nombre = $_SESSION['nombre'];
         $usuario = $_SESSION['usuario'];
+
         $query =     "SELECT numero, m_autorizado, m_disponible FROM public.tarjeta WHERE usuario='$usuario';";
         $result = pg_query($dbconn,$query);
         $filas = pg_num_rows($result);
 
-        if(!$result){
-            echo 'ocurrio un error';
-            header("Location: index.php?reg=false");
-            die();
-        }else{
+        $tarjeta_numero ="";
+        $m_autorizado = floatval(0);
+        $m_disponible = floatval(0);
+        $saldo = $m_autorizado-$m_disponible;
+
+        if($filas > 0){
             $row = pg_fetch_array($result, NULL, PGSQL_ASSOC);
             $tarjeta_numero = $row['numero'];
             $m_autorizado = floatval($row['m_autorizado']);
@@ -127,7 +129,11 @@
                                             </h3>
                                             <h6>
                                                 <?php 
-                                                    echo number_format($m_autorizado/$m_autorizado*100, 0)."%";
+                                                    if($tarjeta_numero != ''){
+                                                        echo number_format($m_autorizado/$m_autorizado*100, 0)."%";
+                                                    }else{
+                                                        echo "---";
+                                                    }                                                    
                                                 ?>
                                             </h6>
                                         </div>
@@ -137,12 +143,16 @@
                                             <h5>Monto disponible</h5>
                                             <h2>
                                                 <?php 
-                                                    echo "Q.".number_format($m_disponible, 2);
+                                                        echo "Q.".number_format($m_disponible, 2);
                                                 ?>
                                             </h2>
                                             <h5>
                                                 <?php 
-                                                    echo number_format($m_disponible/$m_autorizado*100, 0)."%";
+                                                    if($tarjeta_numero != ''){
+                                                        echo number_format($m_disponible/$m_autorizado*100, 0)."%";
+                                                    }else{
+                                                        echo "---";
+                                                    }
                                                 ?>
                                             </h5>
                                         </div>
@@ -157,7 +167,11 @@
                                             </h3>
                                             <h6>
                                                 <?php 
-                                                    echo number_format($saldo/$m_autorizado*100, 0)."%";
+                                                    if($tarjeta_numero != ''){
+                                                        echo number_format($saldo/$m_autorizado*100, 0)."%";
+                                                    }else{
+                                                        echo "---";
+                                                    }
                                                 ?>
                                             </h6>
                                         </div>

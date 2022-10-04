@@ -44,8 +44,8 @@
         $query= "SELECT * FROM empleado;";
         $result = pg_query($dbconn,$query);        
         $filas = pg_num_rows($result);
-        $id=1;
-        if($filas > 0){
+        $id=100;
+        if($filas > 1){
             $query= "SELECT MAX(id) FROM empleado";
             $result = pg_query($dbconn,$query);
             $row = pg_fetch_array($result, NULL, PGSQL_ASSOC);

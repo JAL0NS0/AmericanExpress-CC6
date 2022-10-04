@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS public.usuario
     nombre character(50) COLLATE pg_catalog."default",
     usuario character(20) COLLATE pg_catalog."default" NOT NULL,
     "contraseña" character(15) COLLATE pg_catalog."default",
-    id integer NOT NULL DEFAULT nextval('usuario_id_seq'::regclass),
+    id serial NOT NULL,
     CONSTRAINT usuario_pkey PRIMARY KEY (usuario)
 )
 

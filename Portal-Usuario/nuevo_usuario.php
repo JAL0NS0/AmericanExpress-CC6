@@ -29,7 +29,16 @@
         <div class="row">
             <div class="col-6 mx-auto">
                 <div >
+                    
                     <form class="row g-3 needs-validation" action="guardar_usuario.php" method="POST" novalidate>
+                        <?php
+                            if(isset($_GET["exist"])){
+                                if($_GET["exist"]=="true"){
+                                    echo "<div class='alert alert-danger' role='alert'>Usuario ya existente!
+                                    </div>";
+                                }
+                            }
+                        ?>
                         <div class="col-12">
                             <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -47,7 +56,7 @@
                             <input type="password" class="form-control" id="confirmar" name="confirmar" required>
                         </div>
                         <div class="d-grid gap-2">
-                            <button class="btn btn-primary" type="submit">Button</button>
+                            <button class="btn btn-primary" type="submit">CREAR USUARIO</button>
                             <a href="index.php" class="btn btn-light">CANCELAR</a>
                         </div>
                     </form>

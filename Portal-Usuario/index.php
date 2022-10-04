@@ -38,9 +38,8 @@
                     <?php
                         if(isset($_GET["reg"])){
                             if($_GET["reg"]=="false"){
-                                ?><div class="alert alert-danger" role="alert">Usuario o contraseña incorrectos!
-                                  </div>
-                                <?php 
+                                echo "<div class='alert alert-danger' role='alert'>Usuario o contraseña incorrectos!
+                                </div>";
                             }
                         }
                     ?>

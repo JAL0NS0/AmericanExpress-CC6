@@ -78,15 +78,14 @@
                                        <div class="container" >
                                             <div class="row">
                                                 <div class="col-12 text-center my-2">
-                                                    <a href="./nueva_tarjeta.php" class="btn btn-primary">NUEVA TARJETA</a>
+                                                    <a href="./tarjetas.php" class="btn btn-primary">TARJETAS</a>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-12 text-center my-2">
-                                                    <a href="./realizar_abono.php" class="btn btn-primary">REALIZAR PAGO</a>
+                                                    <a href="./nueva_tarjeta.php" class="btn btn-primary">NUEVA TARJETA</a>
                                                 </div>
                                             </div>
-
                                             <?php 
                                                 if(!strncasecmp($nombre, 'Admin', 5)){
                                                     echo "
